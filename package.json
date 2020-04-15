@@ -1,0 +1,22 @@
+{
+  "name": "bmoor-mockery",
+  "version": "1.0.0",
+  "description": "Methods for aiding in testing and development",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-heilman/bmoor-mockery.git"
+  },
+  "author": "Brian Heilman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-heilman/bmoor-mockery/issues"
+  },
+  "homepage": "https://github.com/b-heilman/bmoor-mockery#readme",
+  "dependencies": {
+    "bmoor": "^0.8.7"
+  }
+}
