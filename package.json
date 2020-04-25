@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Methods for aiding in testing and development",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/b-heilman/bmoor-mockery.git"
@@ -17,6 +14,20 @@
   },
   "homepage": "https://github.com/b-heilman/bmoor-mockery#readme",
   "dependencies": {
-    "bmoor": "^0.8.7"
+    "bmoor": "^0.8.7",
+    "date-fns": "^2.12.0",
+    "date-fns-timezone": "^0.1.4",
+    "date-fns-tz": "^1.0.10"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.1",
+    "sinon-chai": "^3.5.0"
+  },
+  "scripts": {
+    "lint": "jshint src",
+    "test": "npm run lint && mocha --recursive \"./src/**/*.spec.js\""
   }
 }

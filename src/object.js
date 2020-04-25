@@ -1,7 +1,7 @@
 
 const {set} = require('bmoor/src/core.js');
 
-function factory(settings, manager){
+function objectFactory(settings, manager){
 	const generators = settings.map(
 		s => {
 			const gen = manager.get(s.generator)(s.settings, manager);
@@ -20,5 +20,5 @@ function factory(settings, manager){
 }
 
 module.exports = {
-	factory
+	objectFactory
 };

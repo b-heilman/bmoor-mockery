@@ -1,17 +1,18 @@
 
 function getRandomValue(min, max){
-	const length = max - min;
+	const length = max - min+1;
+
 	return Math.floor(Math.random() * length) + min;
 }
 
-function factory(settings={}){
-	let min = 0
+function randomFactory(settings={}){
+	let min = 0;
 	let max = 10;
 	let precision = 0;
 
 	if (settings.range){
-		min = settings.range.min;
-		max = settings.range.max;
+		min = settings.range.min || min;
+		max = settings.range.max || max;
 	}
 
 	if (settings.precision){
@@ -21,7 +22,7 @@ function factory(settings={}){
 		max = precision * max;
 	}
 
-	return function numberGenerator(ctx){
+	return function numberGenerator(){
 		let value = getRandomValue(min, max);
 
 		if (precision){
@@ -32,7 +33,13 @@ function factory(settings={}){
 	};
 }
 
-module.exports = {
-	factory
-};
+function seriesFactory(settings){
+	return function numberSeries(ctx){
+		return ctx.series(settings.series);
+	};
+}
 
+module.exports = {
+	randomFactory,
+	seriesFactory
+};

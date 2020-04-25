@@ -1,5 +1,5 @@
 
-function factory(settings, manager){
+function arrayFactory(settings, manager){
 	const generators = settings.map(
 		s => manager.get(s.generator)(s.settings, manager)
 	);
@@ -10,5 +10,5 @@ function factory(settings, manager){
 }
 
 module.exports = {
-	factory
+	arrayFactory
 };
